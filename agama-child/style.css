@@ -1,0 +1,1486 @@
+/*
+ Theme Name: agama-child
+ Template: agama
+ Theme URI: http://theme-vision.com/agama/
+ Author: ThemeVision
+ Author URI: http://theme-vision.com/
+ Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
+ Version: 1.3.1.3
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, accessibility-ready, buddypress, custom-background, custom-header, custom-logo, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, full-width-template, footer-widgets, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, holiday, news, photography, portfolio
+ Text Domain: agama
+*/
+
+/*--------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------
+
+THEME AGAMA-CHILD
+------------------
+
+I - MODIFICATION DU STYLE PAR DEFAUT DU THEME
+	1 - Couleurs du thème
+	2 - Eléments
+		a - Pages
+			a0 - Pages Erreur 404
+			a1 - Pages générales
+			a2 - Page Catégorie (Générale)
+				a2.1 - Page Catégorie Actualités
+				a2.2 - Sidebar Catégorie Actualités
+				a2.3 - Page Catégorie Plus d'infos
+			a3 - Page d'articles
+		b - Boutons
+		c - Menu de Navigation Primary
+		d - Slider
+		e - Sidebar
+		f - Fil d'Ariane (Breadcrumb)
+		g - Footer
+
+II - MODIFICATION STYLE WIDGET ET PLUGGINS
+	1 - Widgets 
+		a - Modifications Générales
+		b - Calendrier
+		c - Barre de recherche
+		d - Weather Underground
+		e - Recent Post Wiith Thumbnails
+		f - Categoriy Posts
+		g - WP image
+
+	2 - Pluggins
+		a - Contact Form 7
+		b - Font Awesome 4 Menus
+		c - Notice Cookie
+
+III- STYLE TEMPLATE
+	1 - Template page_home
+		a - Bloc principal
+		b - Sidebar
+	2 - Template model_background (1, 2, 3 et none)
+	3 - Template model_with_sidebar
+		a - Bloc principal
+		b - Sidebar
+	4 - Template page_formulaire
+
+IV - STYLE PAGE D'ACCUEIL
+	1 - Contenu
+	2 - Sidebar
+
+V - STYLE PAGE ACTIVITES DU MOIS (Tableau)
+	1 - Tableau : Grille
+	2 - Tableau : Boutons
+
+VI - MEDIA QUERIES @media all and (max-width:1024px)
+	1 - Media Queries Template page_home
+	2 - Template model_with_sidebar
+	3 - Media Queries page d'acceuil
+	4 - Media Queries catégories (Blog)
+
+VII - MEDIA QUERIES @media all and (max-width:992px)
+	1 - Media Queries Navigation Primary
+	2 - Media Queries Footer
+	3 - Media Queries Tableau d'Activité
+	4- Media Queries Formulaire
+
+VIII - MEDIA QUERIES @media all and (max-width:880px)
+	1- Page Catégorie (Générale)
+
+----------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+I - MODIFICATION DU STYLE PAR DEFAUT DU THEME
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------
+
+1 - Couleurs du thème
+
+-------------------------------------------------------------------------------------*/
+
+.comment-content .comment-author cite, #respond #submit, .button, .entry-date .date-box,
+.footer-widgets .widget-title:after, .button-mini, .button-large, .mobile-menu-toggle-inner, 
+.mobile-menu-toggle-inner::before, .mobile-menu-toggle-inner::after
+{
+	background-color: #1B252F !important;
+}
+
+.wpcf7 .button, #pie_0, #toTop:hover
+{
+	background-color: #4C6D8A !important;
+}
+
+.button-3d:hover, #toTop, .button-mini:hover, .button-large:hover, .wpcf7 .button:hover, 
+.edit-link .button-mini:hover
+{
+	background-color: rgba(76, 109, 138,0.8)!important;
+}
+
+.sm-form-control:focus, .category-plus-d-infos .entry-content .more-link, .comment-content .comment-author cite, 
+blockquote, .vision_tabs #tabs li.active a, .button-xlarge, #top-bar,.header_v2, .menu-item a, .comment-form textarea:focus,
+.category-actualites .entry-content .more-link
+{
+	border-color: #4C6D8A !important;
+}
+
+.entry-content .more-link, #page-title a:hover, .breadcrumb a:hover, .entry-date .format-box i, 
+.category-plus-d-infos .entry-content .more-link, .menu-item a, .vision-search-submit, .entry-title a,
+.entry-title,.mobile-menu-toggle-label, .vision-search-submit:hover, .entry-meta a:hover, .entry-content a:hover,
+.comment-content a:hover, a.comment-reply-link:hover, a.comment-edit-link:hover, article header a:hover, 
+.comments-title span, .comment-reply-title span, .widget a:hover, .comments-link a:hover, .entry-meta a:hover, 
+.entry-header header a:hover, .tagcloud a:hover, footer[role="contentinfo"] a:hover,.nav-single a
+{
+	color: #4C6D8A !important;
+}
+
+.category-plus-d-infos .entry-content .more-link:hover, .menu-item a:hover, .vision-search-submit:hover, 
+.entry-title a:hover, .nav-single a:hover
+{
+	color: rgba(76, 109, 138,0.6)!important;
+}
+
+.category-plus-d-infos .entry-content .more-link:hover
+{
+	border-color: rgba(76, 109, 138,0.6)!important;
+}
+
+/*------------------------------------------------------------------------------------
+
+2 - Eléments
+
+-------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+
+a - Pages
+
+---------------------------------------------------------------------*/
+/*-----------------------------------------
+
+a0 - Page Erreur 404
+
+------------------------------------------*/
+
+.error404 div#secondary
+{
+	display: none;
+}
+
+.error404 div#primary
+{
+	margin:auto!important;
+}
+
+/*-----------------------------------------------------
+
+a1 - Pages générales
+
+------------------------------------------------------*/
+
+.type-page .entry-header .entry-title
+{
+	margin-bottom: 5%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2em;
+}
+
+.type-page .entry-header img
+{
+	display: block;
+	width: auto !important;
+	border-radius: 10px;
+	box-shadow: 1px 1px 3px rgba(76, 109, 138,0.8);
+	margin: 0% auto 4% auto !important;
+}
+
+em
+{
+	font-style: normal;
+}
+
+/*-----------------------------------------------------
+
+a2 - Page Catégorie (Générale)
+
+-----------------------------------------------------*/
+
+.archive-title, .archive-header
+{
+	display: none;
+}
+
+.small-thumbs .entry-title
+{
+	text-align: left;
+}
+
+.small-thumbs img
+{
+	border-radius: 10px !important;
+}
+
+.small-thumbs img:hover
+{
+	transform: none !important;
+	opacity: 0.7;
+}
+
+/*-----------------------------------------
+
+a2.1 - Page Catégorie Actualités
+
+------------------------------------------*/
+
+.category-actualites .article-wrapper
+{
+	border-bottom: 2px dotted rgba(76, 109, 138,0.4)!important;
+	border-radius: 20px 20px 20px 20px !important;
+	margin-bottom: 0px !important;
+	padding: 60px 40px 60px 40px;
+	transition: background-color 0.7s;
+}
+
+.category-actualites .article-wrapper:hover
+{
+	background-color: #F1F4F6;
+	border-bottom: 0px !important;
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+}
+
+.category-actualites .vision-row
+{
+	max-width: 1200px;
+}
+
+/*-----------------------------------------
+
+a2.2 - Sidebar Catégorie Actualités
+
+------------------------------------------*/
+
+.category-actualites #secondary .wunderground
+{
+	height: 160px !important;
+}
+
+.category-actualites #secondary #media_image-3
+{
+	display: flex;
+	justify-content: center;
+}
+
+.category-actualites #secondary #category-posts-2, .category-actualites #secondary #recent-posts-widget-with-thumbnails-2
+{
+	display: none;
+}
+
+/*-----------------------------------------
+
+a2.3 - Page Catégorie Plus d'infos
+
+------------------------------------------*/
+
+.category-plus-d-infos #primary
+{
+	padding-right: 0px !important;
+	width: auto;
+}
+
+.category-plus-d-infos .article-wrapper
+{
+	border-bottom: 0px !important ;
+	margin-bottom: 5px !important ;
+	padding-bottom: 20px !important ;
+}
+
+.category-plus-d-infos .small-thumbs 
+{
+	border: 2px dotted rgba(76, 109, 138,0.2) !important;
+	border-radius: 20px 20px 20px 20px !important;
+	margin: auto !important;
+	padding: 5% 5% 5% 5% !important;
+	transition: background-color 0.7s;
+}
+
+.category-plus-d-infos .small-thumbs:hover 
+{
+	background-color: #F1F4F6;
+	border-color: #F1F4F6!important;
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+}
+
+.category-plus-d-infos .entry-meta
+{
+	display: none !important;
+}
+
+/*-----------------------------------------------------
+
+a3 - Page d'articles
+
+-----------------------------------------------------*/
+
+.single-post #primary
+{
+	padding: 0 0px 0 0 !important;
+	position: static !important;
+	width: auto;
+}
+
+.single-post #primary .article-entry-wrapper
+{
+	width: 75%;
+	margin: auto;
+}
+
+.entry-header img
+{
+	width: auto !important;
+	max-width: 50% !important;
+	border-radius: 10px;
+	box-shadow: 1px 1px 3px rgba(76, 109, 138,0.8);
+	margin: 4% auto !important;
+}
+
+.entry-content a
+{
+	color: #4C6D8A !important;
+	font-weight: 600;
+}
+
+.entry-content a:hover
+{
+	color: rgba(76, 109, 138,0.6)!important;
+}
+
+.article-entry-wrapper .entry-title
+{
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+.comment-respond, .nav-single, 
+.postid-125 .single-line-meta, .postid-114 .single-line-meta,
+.postid-109 .single-line-meta, .postid-41 .single-line-meta, .postid-32 .single-line-meta,
+.postid-29 .single-line-meta, .postid-26 .single-line-meta, .postid-23 .single-line-meta,
+.postid-20 .single-line-meta, .postid-17 .single-line-meta, .postid-14 .single-line-meta
+{
+	display: none;
+}
+
+.entry-meta a
+{
+	pointer-events: none;
+	cursor: default;
+}
+
+/*--------------------------------------------------------------------
+
+b - Boutons
+
+---------------------------------------------------------------------*/
+
+#agama_slider a.button-3d, .button-xlarge,
+.entry-content .more-link, .button-mini, .button-large, .wpcf7 .button
+{
+	border-radius: 40px !important;
+}
+
+#agama_slider .slide-content.slide-1 a.button-3d, #agama_slider .slide-content.slide-2 a.button-3d
+{
+	background-color: rgba(41,55,68,0.8) !important;
+	color: #FFFFFF;
+}
+
+#agama-slider-wrapper #agama_slider a.button-3d:hover
+{
+	background-color: rgba(41,55,68,0.6) !important;
+}
+
+.button-mini, .button-large, .wpcf7 .button
+{
+	margin: 4% 0% 2% 0% !important;
+}
+
+.entry-content .more-link
+{
+	border: 1px solid #4C6D8A !important;
+	margin-bottom: 2%; 
+	padding: 3px 10px 3px 10px !important;
+	transition: background-color 0.05s;
+}
+
+.entry-content .more-link:hover
+{
+	background-color: #4C6D8A !important;
+}
+
+.wpcf7 .button:hover, .button-xlarge:hover, .button-mini:hover, .button-large:hover
+{
+	box-shadow: 1px 1px 3px rgba(76, 109, 138,0.8);
+}
+
+.wpcf7 .button:active, .button-xlarge:active, .button-mini:active, .button-large:active,
+.wpcf7 .button, .button-xlarge, .button-mini, .button-large
+{
+	box-shadow: 0.5px 0.5px 1px rgba(76, 109, 138,0.8);
+}
+
+.category-plus-d-infos .entry-content .more-link, .category-actualites .entry-content .more-link
+{
+	float: right;
+	margin-right: 2%;
+}
+
+.category-plus-d-infos .entry-content .more-link:hover, .category-actualites .entry-content .more-link:hover
+{
+	color: #FFFFFF !important;
+}
+
+/*--------------------------------------------------------------------
+
+c - Menu de navigation Primary
+
+---------------------------------------------------------------------*/
+
+.sticky-header-inner
+{
+	max-width: 98% !important; 
+}
+
+.sticky-header-inner a
+{
+	border-color: rgba(76, 109, 138,0.7)!important;
+	padding-bottom: 13px !important;
+	font-size: 0.80em !important;
+	font-weight: 600 !important;
+	text-transform: uppercase !important;
+}
+
+.sticky-header
+{
+	background-color: rgba(241, 244, 246,1) !important;
+	box-shadow: 0.5px 0.8px 4px rgba(76, 109, 138,0.5);
+	position:relative;
+	top: 0px;
+	z-index: 15!important;
+}
+
+#wpadminbar
+{
+	z-index: 9;
+}
+
+/*--------------------------------------------------------------------
+
+d - Slider
+
+---------------------------------------------------------------------*/
+
+.camera_prev, .camera_prevThumbs
+{
+    border-radius: 0px 30px 30px 0px !important;
+}
+.camera_next, .camera_nextThumbs
+{
+    border-radius: 30px 0px 0px 30px !important;
+}
+
+.camera_prev, .camera_prevThumbs, .camera_next, .camera_nextThumbs
+{
+	width: 40px !important;
+	height: 60px !important;
+	background-color: rgba(241, 244, 246,0.5) !important;
+	transition: background-color 0.3s;
+}
+
+.camera_prev:hover, .camera_prevThumbs:hover, .camera_next:hover, .camera_nextThumbs:hover
+{
+	background-color: rgba(241, 244, 246,0.8) !important;
+}
+
+.camera_prev span, .camera_prevThumbs span, .camera_next span, .camera_nextThumbs span
+{
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/*--------------------------------------------------------------------
+
+e - Sidebar
+
+---------------------------------------------------------------------*/
+
+.category-actualites #secondary
+{
+	max-width: 300px !important;
+	background-color: #F1F4F6 !important;
+	border-radius: 20px !important;
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+	padding: 3%;
+	margin-bottom: 6%;
+}
+
+.category-plus-d-infos #secondary, .single-post #secondary
+{
+	display: none;
+}
+
+/*--------------------------------------------------------------------
+
+f - Fil d'Ariane (Breadcrumb)
+
+---------------------------------------------------------------------*/
+
+#main-wrapper #page-title
+{
+	background-color: #F1F4F6;
+}
+
+#main-wrapper #page-title h1, #main-wrapper #page-title li, #main-wrapper #page-title a
+{
+	color: #4C6D8A !important;
+}
+
+/*--------------------------------------------------------------------
+
+g - Footer
+
+---------------------------------------------------------------------*/
+
+.footer-widgets
+{
+	border-color: #1B252F;
+	margin-top: 30px;
+}
+.footer-widgets .container
+{
+	width: 95%;
+	margin: auto;
+}
+
+.footer-widgets .widget-title
+{
+	display: none !important;
+}
+
+#colophon
+{
+	background-color: #1B252F !important;
+}
+
+.footer-widgets #text-4, .footer-widgets #text-3
+{
+	position: relative;
+	bottom:-140px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+.footer-widgets .widget_meta
+{
+	position: relative;
+	bottom:-150px;
+	text-align: right;
+}
+
+.widget_meta li:nth-child(n+3)
+{
+	display: none;
+}
+
+.rss, #top-social
+{
+	display: none;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+II - MODIFICATION STYLE WIDGET ET PLUGGINS
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------
+
+1 - Widgets 
+
+-------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+
+a - Modifications Générales
+
+---------------------------------------------------------------------*/
+
+.widget-title, .widget caption, .widget_rss .widget-title a
+{
+	color: #4C6D8A !important;
+}
+
+.widget-title
+{
+	margin-bottom: 4px !important;
+}
+
+.widget caption
+{
+	text-transform: uppercase;
+	margin-bottom: 2%;
+}
+
+/*--------------------------------------------------------------------
+
+b - Calendrier
+
+---------------------------------------------------------------------*/
+
+#wp-calendar th, #wp-calendar td
+{
+	text-align: center !important;
+}
+
+#wp-calendar #prev
+{
+	display: none;
+}
+
+/*--------------------------------------------------------------------
+
+c - Barre de recherche
+
+---------------------------------------------------------------------*/
+
+.vision-search-field
+{
+	border: 1px solid rgba(76, 109, 138,0.3) !important;
+	border-radius:20px !important;
+	margin-bottom: 2%;
+}
+
+/*--------------------------------------------------------------------
+
+d - Weather Underground
+
+---------------------------------------------------------------------*/
+
+.wunderground .wu-copyright
+{
+	display: none;
+}
+
+.wunderground img
+{
+	border: 1px solid rgba(76, 109, 138,0.4) !important;
+	border-radius: 30px;
+}
+
+.wunderground .wu-day-title
+{
+	color: #4C6D8A;
+}
+
+.wunderground .wu-forecast-wrapper
+{
+	margin-top: 12px;
+	background-color: #FFFFFF;
+	border: 0.5px solid rgba(76, 109, 138,0.2);
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.wunderground .wu-forecast-wrapper tr, .wunderground .wu-forecast-wrapper table
+{
+	width: 100%;
+}
+
+.wunderground .wu-forecast-wrapper tr.forecast
+{
+	display: flex;
+	justify-content: space-around;
+}
+
+.wunderground .wu-forecast-header, .wunderground .wu-cond-text,.wunderground .wu-icon
+{
+	text-align: center;
+}
+
+/*--------------------------------------------------------------------
+
+e - Recent Post Wiith Thumbnails
+
+---------------------------------------------------------------------*/
+
+.recent-posts-widget-with-thumbnails img
+{
+	border-radius: 10px;
+}
+
+.recent-posts-widget-with-thumbnails li
+{
+	border-bottom: 2px dotted rgba(76, 109, 138,0.3) !important;
+}
+
+.recent-posts-widget-with-thumbnails .rpwwt-post-title
+{
+	font-weight: 600;
+	color: #4C6D8A;
+}
+
+.recent-posts-widget-with-thumbnails .rpwwt-post-title:hover
+{
+	color: rgba(76, 109, 138,0.6);
+}
+
+/*--------------------------------------------------------------------
+
+f - Categoriy Posts
+
+---------------------------------------------------------------------*/
+
+.cat-post-widget .cat-post-title
+{
+	font-weight: 600;
+	color: #4C6D8A !important;
+}
+
+.cat-post-widget .cat-post-title:hover
+{
+	color: rgba(76, 109, 138,0.6) !important;
+}
+
+.cat-post-widget .cat-post-item
+{
+	border-bottom: 2px dotted rgba(76, 109, 138,0.3) !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.cat-post-widget .cat-post-thumbnail
+{
+	height: 60px;
+}
+
+.cat-post-widget .cat-post-thumbnail span
+{
+	border-radius: 7px !important;
+}
+
+/*--------------------------------------------------------------------
+
+g - WP image
+
+---------------------------------------------------------------------*/
+
+.widget_media_image img
+{
+	border-radius: 10px;
+}
+
+/*------------------------------------------------------------------------------------
+
+2 - Pluggins
+
+-------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------
+
+a - Contact Form 7
+
+---------------------------------------------------------------------*/
+
+.wpcf7 form
+{
+	width: 80%;
+	background-color: #F1F4F6;
+	border-radius: 20px;
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+	padding: 7% 10%;
+	margin: auto;
+}
+
+.wpcf7 form label
+{
+	color: #4C6D8A;
+}
+
+.wpcf7 form input:last-child, .wpcf7 form select, .wpcf7 form textarea
+{
+	width: 100%;
+	border: 2px dotted rgba(76, 109, 138,0.3) !important;
+	border-radius: 10px;
+	color: #8A8A8E;
+}
+
+.wpcf7 form input:last-child:focus, .wpcf7 form textarea:focus, .wpcf7 form select:focus
+{
+	border-color: rgba(76, 109, 138,0.7) !important;
+}
+
+/*--------------------------------------------------------------------
+
+b - Font Awesome 4 Menus
+
+---------------------------------------------------------------------*/
+
+.sticky-header-inner .fa-home
+{
+	margin-right: 5px;
+	font-size: 1.5em;
+}
+
+/*--------------------------------------------------------------------
+
+c - Notice Cookie
+
+---------------------------------------------------------------------*/
+#cookie-notice .button.wp-default
+{
+	height: 25px;
+	padding: 3px 8px;
+	text-transform: none;
+	font-size: 0.85em;
+}
+
+#cookie-notice #cn-accept-cookie
+{
+	margin-left: 40px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+III- STYLE TEMPLATE
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------
+
+1 - Template page_home
+
+-------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+
+a - Bloc principal
+
+---------------------------------------------------------------------*/
+
+.page-template-page_home .vision-row
+{
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px !important;
+}
+
+.page-template-page_home #primary .entry-content .page-home
+{
+	max-width: 1100px !important;
+	margin: auto;
+}
+
+/*--------------------------------------------------------------------
+
+b - Sidebar
+
+---------------------------------------------------------------------*/
+
+.page-template-page_home #secondary
+{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 100% !important;
+	background-color: #F1F4F6;
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+	border-radius: 20px;
+	padding: 15px;
+	margin: 0% auto 6% auto !important;
+}
+
+.page-template-page_home #secondary .widget
+{
+	display: inline-block;
+	max-width: 260px;
+	margin: 15px 10px;
+}
+
+/*------------------------------------------------------------------------------------
+
+2 - Template model_background (1, 2, 3 et none)
+
+-------------------------------------------------------------------------------------*/
+
+.page-template-model_background_1 #primary .entry-content
+{
+	background-color: rgba(76, 109, 138,0.08);
+}
+
+.page-template-model_background_1 #primary .entry-content, .page-template-model_background_2 #primary .entry-content
+{
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+}
+
+.page-template-model_background_3 #primary .entry-content
+{
+	border: 2px dotted rgba(76, 109, 138,0.3);
+}
+
+.page-template-model_background_1 #primary .entry-content, .page-template-model_background_2 #primary .entry-content,
+.page-template-model_background_3 #primary .entry-content
+{
+	width: 85%;
+	margin: auto;
+	border-radius:20px;
+	padding: 5%;
+}
+
+.page-template-model_background_1 #colophon, .page-template-model_background_1 #colophon, 
+.page-template-model_background_3 #colophon, .page-template-model_background_none #colophon,
+.page-template-page_contact #colophon
+{
+	margin-top:0;
+}
+
+/*------------------------------------------------------------------------------------
+
+3 - Template model_with_sidebar
+
+-------------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------
+
+a - Bloc principal
+
+---------------------------------------------------------------------*/
+
+.page-template-model_sidebar_right .vision-row, .page-template-model_sidebar_left .vision-row
+{
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+}
+
+.page-template-model_sidebar_right #primary ,.page-template-model_sidebar_left #primary
+{
+	width: 75%;
+}
+
+.page-template-model_sidebar_right #primary
+{
+	padding-right: 30px;
+}
+
+.page-template-model_sidebar_left #primary
+{
+	padding-left: 30px;
+}
+
+.page-template-model_sidebar_right .entry-content, .page-template-model_sidebar_left .entry-content
+{
+	max-width: 830px !important;
+	padding: 0% 3%;
+	margin: auto;
+}
+
+/*--------------------------------------------------------------------
+
+b - Sidebar
+
+---------------------------------------------------------------------*/
+
+.page-template-model_sidebar_right #secondary, .page-template-model_sidebar_left #secondary
+{
+	width: 25% !important;
+	background-color: #F1F4F6 !important;
+	border-radius: 20px !important;
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+	padding: 3%;
+	margin-bottom: 6%;
+}
+
+.page-template-model_sidebar_right #secondary .wunderground, .page-template-model_sidebar_right #secondary .wunderground
+{
+	height: 160px !important;
+}
+
+.page-template-model_sidebar_right #secondary #media_image-3, .page-template-model_sidebar_left #secondary #media_image-3
+{
+	display: flex;
+	justify-content: center;
+}
+
+.page-template-model_sidebar_right #secondary #category-posts-2, .page-template-model_sidebar_right #secondary #recent-posts-widget-with-thumbnails-2,
+.page-template-model_sidebar_left #secondary #category-posts-2, .page-template-model_sidebar_left #secondary #recent-posts-widget-with-thumbnails-2
+{
+	display: none;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+4 - Template page_formulaire
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+.page-template-page_formulaire .wpcf7 form select
+{
+	width: 70%;
+	margin-right: 3%;
+	margin-bottom: 4%;
+}
+
+.form-red-star
+{
+	color:#CC0000;
+	font-size: 1.5em;
+	font-weight: 300;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+IV - STYLE PAGE D'ACCUEIL
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------
+
+1 - Contenu
+
+-------------------------------------------------------------------------------------*/
+
+.entry-content .page-home h2, .entry-content .page-home a
+{
+	color: rgba(76, 109, 138,0.9);
+	font-weight: 600;
+}
+
+.entry-content .page-home a:hover
+{
+	color: rgba(76, 109, 138,0.6) !important;
+}
+
+.entry-content .page-home .content-bloc
+{
+	width: 90%;
+	margin: auto;
+}
+
+.entry-content .page-home .bloc-content-1, .entry-content .page-home .bloc-content-2
+{
+ 	display: flex;
+ 	justify-content: center;
+ 	margin: auto;
+}
+
+.entry-content .page-home .bloc-text
+{
+	max-width: 390px;
+	min-height: 160px;
+	border:2px dotted rgba(76, 109, 138,0.5);
+	border-radius: 20px;
+	padding: 30px;
+	margin: 20px 55px 30px 55px;
+	transition: background-color 0.7s;
+}
+
+.entry-content .page-home .bloc-text:hover
+{
+	border-color: #F1F4F6;
+	background-color: #F1F4F6;
+	box-shadow: 0.5px 0.8px 3px rgba(76, 109, 138,0.5);
+}
+
+.entry-content .page-home .bloc-text img
+{
+	border-radius: 12px;
+	max-height: 250px;
+	display: block;
+	margin: auto;
+}
+
+/*------------------------------------------------------------------------------------
+
+2 - Sidebar
+
+-------------------------------------------------------------------------------------*/
+
+.page-template-page_home #secondary .widget_calendar, .page-template-page_home #secondary .widget_search, 
+.page-template-page_home #secondary .rss-widget-icon, .page-template-page_home #secondary #category-posts-3,
+.page-template-page_home #secondary #media_image-3, .page-template-page_home #secondary #wunderground_forecast_widget-2
+{
+	display: none !important;
+}
+
+.page-template-page_home #secondary #recent-posts-widget-with-thumbnails-2, .page-template-page_home #secondary #category-posts-2
+{
+	max-width: 45%;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+V - STYLE PAGE ACTIVITES DU MOIS (Tableau)
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------
+
+1 - Tableau : Grille
+
+-------------------------------------------------------------------------------------*/
+
+.table-activites table
+{
+	background-color: #FFFFFF;
+	border-collapse: collapse;
+	border: 1px solid rgba(76, 109, 138,0.3);
+}
+
+.table-activites th, .table-activites .col-1,.table-activites .col-2,.table-activites .col-3
+{
+	border: 1px solid rgba(76, 109, 138,0.3);
+
+}
+
+.table-activites th, .table-activites .col-1,.table-activites .col-2
+{
+	text-align: center;
+	padding:10px 5px;
+}
+
+.table-activites th, .table-activites .col-1
+{
+	font-size: 1.2em;
+	color: #4C6D8A;
+}
+
+
+.table-activites .col-3
+{
+	max-width: 350px;
+	text-align: justify;
+	padding:15px 35px;
+}
+
+.table-activites .col-4
+{
+	border-top: 1px solid #FFFFFF;
+	text-align: center;
+	padding: 10px;
+}
+
+.table-activites .th-col-4
+{
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.table-activites tr:hover .col-1, .table-activites tr:hover .col-2, .table-activites tr:hover .col-3
+{
+	background-color: rgba(76, 109, 138,0.1);
+	border-top: 2px solid rgba(76, 109, 138,0.3);
+	border-bottom: 2px solid rgba(76, 109, 138,0.3);
+}
+
+/*------------------------------------------------------------------------------------
+
+2 - Tableau : Boutons
+
+-------------------------------------------------------------------------------------*/
+
+.table-activites .table-button
+{
+	max-width: 130px;
+	background-color: #4C6D8A;
+	border-radius: 25px; 
+	padding: 11px 8px 11px 8px;
+	margin:auto;
+	box-shadow: 1px 1.5px 2px rgba(76, 109, 138,0.8);
+	font-size: 1em;
+	line-height: 13px;
+	transition: background-color 0.4s;
+}
+
+.table-activites .table-button:hover
+{
+	background-color: rgba(76, 109, 138,0.8);
+}
+
+.table-activites .table-button:active
+{
+	box-shadow: 0.5px 0.5px 1px rgba(76, 109, 138,0.8);
+}
+
+.table-activites .table-button, .table-activites .table-button:hover
+{
+	color: #FFFFFF !important;
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+VI - MEDIA QUERIES @media all and (max-width:1024px)
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+
+@media all and (max-width:1024px)
+{
+	/*------------------------------------------------------------------------------------
+
+	1 - Media Queries Template page_home
+
+	-------------------------------------------------------------------------------------*/
+
+	.page-template-page_home .vision-row
+	{
+		flex-direction: column-reverse;
+	}
+
+	.page-template-page_home .logo-unesco
+	{
+		display: block;
+		margin:50px auto;
+
+	}
+
+	.page-template-page_home .home-introduction h2
+	{
+		text-align: center;
+	}
+
+	.page-template-page_home #secondary
+	{
+		flex-direction: column;
+	}
+
+	.page-template-page_home #secondary .widget
+	{
+		max-width: 100% !important;
+	}
+
+	/*------------------------------------------------------------------------------------
+
+	2 - Template model_with_sidebar
+
+	-------------------------------------------------------------------------------------*/
+
+	.page-template-model_sidebar_right .vision-row
+	{
+		flex-direction: column;
+	}
+
+	.page-template-model_sidebar_left .vision-row
+	{
+		flex-direction: column-reverse;
+	}
+
+	.page-template-model_sidebar_right #primary, .page-template-model_sidebar_left #primary
+	{
+		padding-right: 0px !important;
+		width: 100% !important;
+	}
+
+	.page-template-model_sidebar_right .entry-content, .page-template-model_sidebar_left .entry-content
+	{
+		padding: 0px 8% !important;
+	}
+
+	.page-template-model_sidebar_right #secondary, .page-template-model_sidebar_left #secondary
+	{
+		width: 100% !important;
+	}
+
+	.page-template-model_sidebar_right #secondary #media_image-3, .page-template-model_sidebar_left #secondary #media_image-3
+	{
+		justify-content: flex-start;
+	}
+
+	/*------------------------------------------------------------------------------------
+
+	3 - Media Queries page d'acceuil
+
+	-------------------------------------------------------------------------------------*/
+	.page-template-page_home .entry-content
+	{
+		width: 92%;
+		margin: auto;
+	}
+	.entry-content .page-home .content-bloc
+	{
+		max-width: 100%;
+		margin: auto;
+	}
+	
+	.entry-content .page-home .bloc-content-1, .entry-content .page-home .bloc-content-2
+	{
+		flex-direction: column;
+		height: auto;
+	}
+
+	.entry-content .page-home .bloc-text
+	{
+		max-width: 100%;
+		margin: 20px 5px 30px 5px;
+	}
+
+	.entry-content .page-home .bloc-text img
+	{
+		max-height: 100%;
+		max-width: 100%;
+	}
+
+	/*------------------------------------------------------------------------------------
+
+	4 - Media Queries catégorie (Blog)
+
+	-------------------------------------------------------------------------------------*/
+
+	.category-actualites #primary
+	{
+		padding-right: 0 !important;
+	}
+	.category-actualites #secondary, .category-actualites #primary, .category-actualites #secondary .widget
+	{
+		max-width: 100% !important;
+	}
+
+	.category-actualites #secondary
+	{
+		margin-top: 5%;
+	}
+
+	.category-actualites #secondary #media_image-3
+	{
+		margin-top: 30px;
+	}
+}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+VII - MEDIA QUERIES @media all and (max-width:992px)
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 992px)
+{
+	/*------------------------------------------------------------------------------------
+
+	1 - Media Queries Navigation Primary 
+
+	-------------------------------------------------------------------------------------*/
+	.sticky-header.sticky-header-shrink, .sticky-header-shrink+#vision-mobile-nav, .sticky-header+#vision-mobile-nav 
+	{
+   		background-color: rgba(241, 244, 246,1) !important;
+	}
+
+	.sticky-header-shrink+#vision-mobile-nav, .sticky-header+#vision-mobile-nav
+	{
+		border-bottom: 1px solid rgba(76, 109, 138,0.3) !important;
+	}
+
+	.sticky-header-shrink+#vision-mobile-nav a, .sticky-header+#vision-mobile-nav a
+	{
+		border-bottom : 0px !important;
+	}
+
+	.sticky-header-shrink+#vision-mobile-nav .menu-item-45 a, .sticky-header-shrink+#vision-mobile-nav .menu-item-46 a,
+	.sticky-header-shrink+#vision-mobile-nav .menu-item-30 a, .sticky-header-shrink+#vision-mobile-nav .menu-item-31 a,
+	.sticky-header+#vision-mobile-nav .menu-item-45 a, .sticky-header+#vision-mobile-nav .menu-item-46 a,
+	.sticky-header+#vision-mobile-nav .menu-item-30 a, .sticky-header+#vision-mobile-nav .menu-item-31 a,
+	.sticky-header-shrink+#vision-mobile-nav .menu-item-71 a, .sticky-header-shrink+#vision-mobile-nav .menu-item-72 a,
+	.sticky-header-shrink+#vision-mobile-nav .menu-item-73 a, .sticky-header-shrink+#vision-mobile-nav .menu-item-74 a,
+	.sticky-header+#vision-mobile-nav .menu-item-71 a, .sticky-header+#vision-mobile-nav .menu-item-72 a,
+	.sticky-header+#vision-mobile-nav .menu-item-73 a, .sticky-header+#vision-mobile-nav .menu-item-74 a
+	{
+		border-top: 1px solid rgba(76, 109, 138,0.3) !important;	
+	}
+
+	.sticky-header.sticky-header-shrink, .sticky-header-shrink+#vision-mobile-nav
+	{
+   		position: fixed !important;
+	}
+
+	.sticky-header.sticky-header-shrink
+	{
+		top: 0;
+   		z-index: 11;
+	}
+
+	.sticky-header-shrink+#vision-mobile-nav 
+	{
+		top: 66px;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		padding-bottom: 15px;
+	}
+
+	.sticky-header-shrink+#vision-mobile-nav a:hover, .sticky-header+#vision-mobile-nav a:hover
+	{
+		color: rgba(76, 109, 138,0.6) !important;
+	}
+	/*------------------------------------------------------------------------------------
+
+	2 - Media Queries Footer
+
+	-------------------------------------------------------------------------------------*/
+
+	.footer-widgets .widget_meta, .footer-widgets #text-4, .footer-widgets #text-3
+	{
+		bottom:0px;
+		margin-top: 20px;
+		text-align: left;
+	}
+
+	/*------------------------------------------------------------------------------------
+
+	3 - Media Queries Tableau d'Activité
+
+	-------------------------------------------------------------------------------------*/
+
+	.table-activites .col-3
+	{
+		padding:15px 15px;
+	}
+
+	/*------------------------------------------------------------------------------------
+
+	4- Media Queries Formulaire
+
+	-------------------------------------------------------------------------------------*/
+	.wpcf7 form
+	{
+		width: 95%;
+	}
+
+/*-------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------
+
+VIII - MEDIA QUERIES @media all and (max-width:880px)
+
+---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 880px)
+{
+	/*-----------------------------------------------------
+
+	1- Page Catégorie (Générale)
+
+	-----------------------------------------------------*/
+	.small-thumbs .entry-title
+	{
+		text-align: center;
+	}
+
+	.small-thumbs img
+	{
+		width: 70%;
+		margin: auto;
+	}
+}
